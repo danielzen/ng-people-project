@@ -4,17 +4,26 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { GenderPipe } from './gender.pipe';
+import {PersonService} from './person.service';
+import { SearchComponent } from './search/search.component';
+import {PeopleProjectRoutingModule} from './app-routing.module';
+import { ShowComponent } from './show/show.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    GenderPipe,
+    SearchComponent,
+    ShowComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    PeopleProjectRoutingModule
   ],
-  providers: [],
+  providers: [PersonService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
